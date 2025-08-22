@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orb Rider-3D</title>'
+<link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>⚪ ORB RIDER </h1>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <span class="theme-icon" id="themeIcon">🌙</span>
+        </button>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Menu Screen -->
+        <div class="menu-screen" id="menuScreen">
+            <h2 class="menu-title">⚪ ORB RIDER</h2>
+            
+            <div class="menu-section">
+                <h3>DIFFICULTY LEVEL</h3>
+                <div class="menu-buttons">
+                    <button class="menu-btn active" data-difficulty="easy">🐌 EASY</button>
+                    <button class="menu-btn" data-difficulty="medium">🚶 MEDIUM</button>
+                    <button class="menu-btn" data-difficulty="hard">🏃 HARD</button>
+                    <button class="menu-btn" data-difficulty="extreme">🚀 EXTREME</button>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h3>GAME MODE</h3>
+                <div class="menu-buttons">
+                    <button class="menu-btn active" data-mode="classic">🎯 CLASSIC</button>
+                    <button class="menu-btn" data-mode="endless">♾️ ENDLESS</button>
+                    <button class="menu-btn" data-mode="timed">⏰ TIME ATTACK</button>
+                    <button class="menu-btn" data-mode="maze">🧩 MAZE MODE</button>
+                </div>
+            </div>
+
+            <button class="menu-btn start-btn" onclick="startGame()">🎮 START GAME</button>
+        </div>
+
+        <!-- Game Container -->
+        <div class="game-container" id="gameContainer">
+            <div class="game-ui">
+                <div class="score-panel">
+                    <div class="score-item">
+                        <div class="score-label">SCORE</div>
+                        <div class="score-value" id="score">0</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-label">LENGTH</div>
+                        <div class="score-value" id="length">1</div>
+                    </div>
+                    <div class="score-item" id="timeDisplay" style="display: none;">
+                        <div class="score-label">TIME</div>
+                        <div class="score-value" id="timeLeft">60</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-label">LEVEL</div>
+                        <div class="score-value" id="level">1</div>
+                    </div>
+                </div>
+                <button class="pause-btn" onclick="togglePause()">PAUSE</button>
+            </div>
+            
+            <canvas id="gameCanvas" width="600" height="400"></canvas>
+            
+            <div class="game-controls">
+                <strong>CONTROLS:</strong> WASD or Arrow Keys to move • SPACE to pause • ESC to menu
+            </div>
+
+            <!-- Game Over Screen -->
+            <div class="game-over" id="gameOver">
+                <h2>👻 GAME OVER!</h2>
+                <div class="game-over-stats">
+                    <div class="stat-item">
+                        <div class="score-label">FINAL SCORE</div>
+                        <div class="score-value" id="finalScore">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="score-label">MAX LENGTH</div>
+                        <div class="score-value" id="maxLength">1</div>
+                    </div>
+                </div>
+                <div class="menu-buttons">
+                    <button class="menu-btn" onclick="restartGame()">🔄 RESTART</button>
+                    <button class="menu-btn" onclick="backToMenu()">🏠 MAIN MENU</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="copyright">© 2025 Orb Rider 3D. All rights reserved.</div>
+            <div class="made-by">Made by <a href="">SIMRAN YADAV</a></div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+   
+    <script src="script.js"></script>
+</body>
+</html>
